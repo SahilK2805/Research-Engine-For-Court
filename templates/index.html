@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Case Outcome Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Court Case Outcome Prediction</h1>
+
+    <form method="POST">
+        <label for="case_title">Case Title:</label><br>
+        <input type="text" id="case_title" name="case_title" required><br>
+
+        <label for="date_filed">Date Filed:</label><br>
+        <input type="date" id="date_filed" name="date_filed" required><br>
+
+        <label for="case_type">Case Type:</label><br>
+        <input type="text" id="case_type" name="case_type" required><br>
+
+        <label for="plaintiff">Plaintiff:</label><br>
+        <input type="text" id="plaintiff" name="plaintiff" required><br>
+
+        <label for="defendant">Defendant:</label><br>
+        <input type="text" id="defendant" name="defendant" required><br><br>
+
+        <input type="submit" value="Predict Outcome">
+    </form>
+
+    {% if prediction %}
+    <h2>Prediction</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
+
+</body>
+</html>
